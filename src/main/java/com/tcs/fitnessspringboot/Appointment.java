@@ -12,6 +12,14 @@ public class Appointment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	private Date date;
 	private String name;
 	private Long phone;
