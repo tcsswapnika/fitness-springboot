@@ -26,6 +26,16 @@ public class Appointment {
 	private String email;
 	private String trainer;
 	private Integer pack;
+	private String address;
+	private String gender;
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
 	public Date getDate() {
 		return date;
@@ -73,6 +83,14 @@ public class Appointment {
 
 	public void setPack(Integer pack) {
 		this.pack = pack;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 }
