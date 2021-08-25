@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import com.tcs.fitnessspringboot.Appointment;
+import com.tcs.fitnessspringboot.exceptions.AppointmentNotFoundException;
 import com.tcs.fitnessspringboot.repository.IAppointmentRepository;
 
 @Service
@@ -38,6 +39,15 @@ public class AppointmentService implements IAppointmentService {
 		if (StringUtils.hasText(appointment.getName()))
 			appointment1.setName(appointment.getName());
 		appointmentRepository.save(appointment1);
+	}
+
+	@Override
+	public Optional<Appointment> getAppointment(Integer id) {
+		Optional<Appointment> appointment = appointmentRepository.findById(id);
+		if (!appointment.isPresent()) {
+			throw new AppointmentNotFoundException("Appointment does not exist");
+		}
+		return appointment;
 	}
 
 }
