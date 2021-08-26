@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import com.tcs.fitnessspringboot.Appointment;
+import com.tcs.fitnessspringboot.entity.Appointment;
 import com.tcs.fitnessspringboot.exceptions.AppointmentNotFoundException;
 import com.tcs.fitnessspringboot.repository.IAppointmentRepository;
 

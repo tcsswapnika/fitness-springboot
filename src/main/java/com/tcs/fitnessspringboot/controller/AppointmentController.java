@@ -1,5 +1,7 @@
 package com.tcs.fitnessspringboot.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tcs.fitnessspringboot.Appointment;
+import com.tcs.fitnessspringboot.entity.Appointment;
 import com.tcs.fitnessspringboot.exceptions.AppointmentNotFoundException;
 import com.tcs.fitnessspringboot.services.IAppointmentService;
 
@@ -42,7 +44,7 @@ public class AppointmentController {
 	}
 
 	@PostMapping
-	public void saveAppointment(@RequestBody Appointment appointment) {
+	public void saveAppointment(@RequestBody @Valid Appointment appointment) {
 		appointmentService.save(appointment);
 		System.out.println(appointment.getDate());
 		System.out.println(appointment.getName());

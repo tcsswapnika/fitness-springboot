@@ -2,7 +2,7 @@ package com.tcs.fitnessspringboot.services;
 
 import java.util.Optional;
 
-import com.tcs.fitnessspringboot.Appointment;
+import com.tcs.fitnessspringboot.entity.Appointment;
 
 public interface IAppointmentService {
 	void save(Appointment appointment);
